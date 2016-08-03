@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{9049EED8-76D0-2221-B3E7-68EEF715954D}") = "CrowdSim", "Assembly-CSharp.csproj", "{3290E852-B977-1719-E253-AC0CC04A7640}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3290E852-B977-1719-E253-AC0CC04A7640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3290E852-B977-1719-E253-AC0CC04A7640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3290E852-B977-1719-E253-AC0CC04A7640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3290E852-B977-1719-E253-AC0CC04A7640}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

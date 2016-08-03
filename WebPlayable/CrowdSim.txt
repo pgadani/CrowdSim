@@ -1,0 +1,7 @@
+Blue capsules are agents
+Orange boxes are obstacles
+Red spheres are Nazgul agents
+
+These can be selected by ctrl + clicking on them. The agents move to the location you click (or the closest possible location if obstacles are in the way). The obstacles can be moved using the arrow keys.
+
+White spheres are roaming devils, which move randomly.
