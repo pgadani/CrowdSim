@@ -286,7 +286,7 @@ ModelImporter:
       name: Locomotion@Run_Jump
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 27
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -299,13 +299,13 @@ ModelImporter:
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 1
-      heightFromFeet: 0
+      heightFromFeet: 1
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves:
-      - name: JumpCurve
+      - name: OriginalJumpCurve
         curve:
           serializedVersion: 2
           curve:
@@ -347,7 +347,7 @@ ModelImporter:
           preInfinity: 2
           postInfinity: 2
           rotationOrder: 4
-      - name: CapsuleCurve
+      - name: OriginalCapsuleCurve
         curve:
           serializedVersion: 2
           curve:
@@ -379,6 +379,65 @@ ModelImporter:
           preInfinity: 2
           postInfinity: 2
           rotationOrder: 4
+      - name: JumpCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 0.25
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 0.75
+            value: -1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 3
+          postInfinity: 3
+          rotationOrder: 0
+      - name: CapsuleCurve
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0.01291877
+            value: -0.0035587193
+            inSlope: Infinity
+            outSlope: -0.29600152
+            tangentMode: 7
+          - time: 0.0997921
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 0.4442623
+            value: -1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 0.9011724
+            value: 0
+            inSlope: 0.33094615
+            outSlope: Infinity
+            tangentMode: 25
+          - time: 1
+            value: 0
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 0
       events: []
       transformMask: []
       maskType: 0
