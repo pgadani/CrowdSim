@@ -12,7 +12,8 @@ public class AgentControl : MonoBehaviour {
 
 	void OnMouseUp() {
 		// ctrl click to select agents
-		if (Input.GetButton("Fire1")) {
+		// if (Input.GetButton("Fire1")) {
+		if (Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl)) {
 			Director.SelectAgent(agent);
 		}
 	}

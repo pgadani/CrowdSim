@@ -26,7 +26,7 @@ public class Director : MonoBehaviour {
 
 	void Update() {
 		// click without pressing ctrl to select target location
-		if (Input.GetMouseButtonDown(0) && !Input.GetButton("Fire1")) {
+		if (Input.GetMouseButtonDown(0) && !(Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl))) {
 			RaycastHit hit;
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit)) {

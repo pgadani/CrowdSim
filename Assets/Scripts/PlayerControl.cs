@@ -24,7 +24,8 @@ public class PlayerControl : MonoBehaviour {
 			animator.ResetTrigger("Jump");
 		}
 		if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
-			v*=2;
+			// v*=2;
+			v = 2;
 		}
 		animator.SetFloat("Speed", v);
 		animator.SetFloat("Direction", h);
