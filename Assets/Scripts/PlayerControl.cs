@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour {
 	public float capsuleHeight;
 	public float jumpHeight;
 	public float jumpDistance; // adjusted based on speed
+	private static float walkSpeed = 1.556f;
+	private static float runSpeed = 5.668f;
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -24,8 +26,10 @@ public class PlayerControl : MonoBehaviour {
 			animator.ResetTrigger("Jump");
 		}
 		if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
-			// v*=2;
-			v = 2;
+			v*=runSpeed;
+		}
+		else {
+			v*=walkSpeed;
 		}
 		animator.SetFloat("Speed", v);
 		animator.SetFloat("Direction", h);
@@ -36,7 +40,7 @@ public class PlayerControl : MonoBehaviour {
 		if (currentBaseState.IsName("Base.LocomotionJump")) {
 			transform.Translate(Vector3.up*animator.GetFloat("JumpCurve")*jumpHeight);
 			capsule.height = capsuleHeight + animator.GetFloat("CapsuleCurve") * 2.0f;
-			transform.Translate(Vector3.forward*Time.deltaTime*jumpDistance*animator.GetFloat("Speed")*0.5f);
+			transform.Translate(transform.forward*Time.deltaTime*jumpDistance*animator.GetFloat("Speed")*0.5f); //does this even do things
 		}
 		else if (currentBaseState.IsName("Base.IdleJump")) {
 			transform.Translate(Vector3.up*animator.GetFloat("JumpCurve")*jumpHeight);

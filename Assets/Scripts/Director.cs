@@ -32,13 +32,16 @@ public class Director : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit)) {
 				target = hit.point;
 				hasTarget = true;
+				foreach (NavMeshAgent a in selected) {
+					a.SetDestination(target);
+				}
 			}
 		}
-		if (hasTarget) {
-			foreach (NavMeshAgent a in selected) {
-				a.destination = target;
-			}
-		}
+		// if (hasTarget) {
+		// 	foreach (NavMeshAgent a in selected) {
+		// 		// a.destination = target;
+		// 	}
+		// }
 	}
 
 	void FixedUpdate() {
