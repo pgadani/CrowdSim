@@ -44,12 +44,16 @@ public class AnimAgentControl : MonoBehaviour {
 			if (cross.z > 0) {
 				angle = -angle;
 			}
-			smooth = Mathf.Min(1.0f, Time.deltaTime/0.15f);
+			float smooth = Mathf.Min(1.0f, Time.deltaTime/0.15f);
 			smoothAngle = Mathf.Lerp(smoothAngle, angle, smooth);
 			animator.SetFloat("Speed", forwardSpeed);
 			animator.SetFloat("Direction", smoothAngle);
-			animator.SetFloat("AngularSpeed", smoothAngle/0.7f);
-			print(angle+" "+smoothAngle+" "+orientation+" "+velocity);
+			float angularSpeed = smoothAngle/0.7f;
+			if (angularSpeed < 1) { // to prevent oscillation - but makes movement more awkward
+				angularSpeed = 0;
+			}
+			animator.SetFloat("AngularSpeed", angularSpeed);
+			print(angularSpeed);
 		}
 
 
