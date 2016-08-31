@@ -34,10 +34,11 @@ public class AnimAgentControl : MonoBehaviour {
 			animator.SetFloat("Speed", 0);
 			animator.SetFloat("Direction", 0);
 			animator.SetFloat("AngularSpeed", 0);
+			// animator.SetBool("Move", false);
 			smoothAngle = 0;
 			angularSpeed = 0;
 		}
-		else if (Time.deltaTime > 1e-2f && velocity.magnitude > 0.0f) {
+		else if (Time.deltaTime > 0.01f && velocity.magnitude > 0.0f) {
 			Vector2 orientation = new Vector2(transform.forward.x, transform.forward.z);
 			orientation.Normalize();
 
@@ -50,8 +51,9 @@ public class AnimAgentControl : MonoBehaviour {
 				angle = -angle;
 			}
 
-			smoothAngle = Mathf.SmoothDampAngle(smoothAngle, angle, ref angularSpeed, 0.1f, maxAng); // 0.7f
+			smoothAngle = Mathf.SmoothDampAngle(smoothAngle, angle, ref angularSpeed, 0.3f, maxAng); // 0.7f
 
+			// animator.SetBool("Move", true);
 			animator.SetFloat("Speed", forwardSpeed);
 			animator.SetFloat("Direction", angle);
 			animator.SetFloat("AngularSpeed", angularSpeed);
