@@ -75,15 +75,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: 0.3
+    agentRadius: 0.6
     agentHeight: 1.8
     agentSlope: 30
-    agentClimb: 0.2
+    agentClimb: 0.25
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: 0.1
+    cellSize: 0.2
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: d174bd791bf7d41408e4cfe4f100b908, type: 2}
 --- !u!1 &13123184
@@ -2730,7 +2730,7 @@ Transform:
   - {fileID: 1070185098}
   - {fileID: 1333688992}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &265279759
 GameObject:
   m_ObjectHideFlags: 0
@@ -10689,7 +10689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44bf8e5184c81441bb12cf2aeaddbbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1855782040}
+  cam: {fileID: 1896110055}
 --- !u!4 &1489478561
 Transform:
   m_ObjectHideFlags: 0
@@ -10702,7 +10702,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1517968893
 GameObject:
   m_ObjectHideFlags: 0
@@ -21795,12 +21795,12 @@ GameObject:
   - 124: {fileID: 1855782038}
   - 81: {fileID: 1855782037}
   m_Layer: 0
-  m_Name: 'Main Camera '
+  m_Name: Main Camera 2
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1855782037
 AudioListener:
   m_ObjectHideFlags: 0
@@ -22630,12 +22630,12 @@ GameObject:
   - 124: {fileID: 1896110053}
   - 81: {fileID: 1896110052}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1896110052
 AudioListener:
   m_ObjectHideFlags: 0
@@ -22703,7 +22703,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1902035645
 GameObject:
   m_ObjectHideFlags: 0

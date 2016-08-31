@@ -10,10 +10,13 @@ public class AnimAgentControl : MonoBehaviour {
 	private static int WALK = 1;
 	// private static int RUN = 2;
 	private static float WALK_SPEED = 1.5f;
+	private static float WALK_ANG = 101.3f;
 	private static float RUN_SPEED = 5.6f;
+	private static float RUN_ANG = 132.9f;
 
-	// private Vector2 smoothDelta;
+	private float maxAng;
 	private float smoothAngle;
+	private float angularSpeed;
 
 	void Start() {
 		animator = GetComponent<Animator>();
@@ -22,6 +25,7 @@ public class AnimAgentControl : MonoBehaviour {
 		agent.updateRotation = false;
 		state = IDLE;
 		smoothAngle = 0;
+		maxAng = WALK_ANG;
 	}
 	
 	void Update() {
@@ -31,6 +35,7 @@ public class AnimAgentControl : MonoBehaviour {
 			animator.SetFloat("Direction", 0);
 			animator.SetFloat("AngularSpeed", 0);
 			smoothAngle = 0;
+			angularSpeed = 0;
 		}
 		else if (Time.deltaTime > 1e-2f && velocity.magnitude > 0.0f) {
 			Vector2 orientation = new Vector2(transform.forward.x, transform.forward.z);
@@ -44,19 +49,22 @@ public class AnimAgentControl : MonoBehaviour {
 			if (cross.z > 0) {
 				angle = -angle;
 			}
-			float smooth = Mathf.Min(1.0f, Time.deltaTime/0.15f);
-			smoothAngle = Mathf.Lerp(smoothAngle, angle, smooth);
+
+			smoothAngle = Mathf.SmoothDampAngle(smoothAngle, angle, ref angularSpeed, 0.1f, maxAng); // 0.7f
+
 			animator.SetFloat("Speed", forwardSpeed);
-			animator.SetFloat("Direction", smoothAngle);
-			float angularSpeed = smoothAngle/0.7f;
-			if (angularSpeed < 1) { // to prevent oscillation - but makes movement more awkward
-				angularSpeed = 0;
-			}
+			animator.SetFloat("Direction", angle);
 			animator.SetFloat("AngularSpeed", angularSpeed);
-			print(angularSpeed);
+			print(angle+" "+angularSpeed);
 		}
 
+		AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+		if (state.IsName("Base.IdlePivot") || state.IsName("Base.PlantNTurnLeft") || state.IsName("Base.PlantNTurnRight")) {
+			smoothAngle = 0;
+			angularSpeed = 0;
+		}
 
+		agent.nextPosition =  transform.position + 0.6f*(agent.nextPosition - transform.position); // originally 0.9
 
 		// if (agent.remainingDistance > agent.radius && Time.deltaTime > 1e-5f) {
 		// 	Vector3 worldDelta = agent.nextPosition - transform.position;
@@ -81,9 +89,6 @@ public class AnimAgentControl : MonoBehaviour {
 		// 	animator.SetFloat("Direction", 0);
 		// 	animator.SetFloat("AngularSpeed", 0);
 		// }
-
-		agent.nextPosition =  transform.position + 0.9f*(agent.nextPosition - transform.position);
-
 	}
 
 	void onAnimatorMove() {
@@ -97,9 +102,11 @@ public class AnimAgentControl : MonoBehaviour {
 		}
 		else if (state == WALK) {
 			agent.speed = WALK_SPEED;
+			maxAng = WALK_ANG;
 		}
 		else {
 			agent.speed = RUN_SPEED;
+			maxAng = RUN_ANG;
 		}
 	}
 
