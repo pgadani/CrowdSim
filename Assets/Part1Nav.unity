@@ -127,7 +127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 143960, guid: a1e5e6a5b5d24b840b2c86cb55f65430, type: 2}
       propertyPath: m_Name
-      value: Obstacle (3)
+      value: Obstacle (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1e5e6a5b5d24b840b2c86cb55f65430, type: 2}
@@ -257,6 +257,10 @@ Prefab:
     - target: {fileID: 19534850, guid: f448d2a74c4cc3248b527667fd823dd7, type: 2}
       propertyPath: m_AutoTraverseOffMeshLink
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195978, guid: f448d2a74c4cc3248b527667fd823dd7, type: 2}
+      propertyPath: m_TagString
+      value: Movable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f448d2a74c4cc3248b527667fd823dd7, type: 2}
@@ -445,10 +449,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1525666096}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: -0.000000115202326, y: 0.7071067, z: -0.7071068, w: -0.00000011520231}
   m_LocalPosition: {x: 0, y: 23.27586, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -493,12 +497,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185574, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
       propertyPath: m_Name
-      value: Agent (1)
+      value: Agent
       objectReference: {fileID: 0}
     - target: {fileID: 2359012, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6329dab367b2b444ea6a9c1ae5c3a8ba, type: 2}
+    - target: {fileID: 185574, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
+      propertyPath: m_TagString
+      value: Movable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
   m_IsPrefabParent: 0
@@ -543,12 +551,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185574, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
       propertyPath: m_Name
-      value: Agent (2)
+      value: Agent (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2359012, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6329dab367b2b444ea6a9c1ae5c3a8ba, type: 2}
+    - target: {fileID: 185574, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
+      propertyPath: m_TagString
+      value: Movable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5a7404c5a30bd34e84f238684db4b50, type: 2}
   m_IsPrefabParent: 0
@@ -590,6 +602,10 @@ Prefab:
     - target: {fileID: 412230, guid: b93a3d20529057e4087ec139b1be5a0a, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 148958, guid: b93a3d20529057e4087ec139b1be5a0a, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b93a3d20529057e4087ec139b1be5a0a, type: 2}
@@ -666,6 +682,10 @@ Prefab:
     - target: {fileID: 405980, guid: a1e5e6a5b5d24b840b2c86cb55f65430, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 143960, guid: a1e5e6a5b5d24b840b2c86cb55f65430, type: 2}
+      propertyPath: m_TagString
+      value: Movable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1e5e6a5b5d24b840b2c86cb55f65430, type: 2}

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestPlayer.unity
+    path: Assets/Part2Anim.unity
   - enabled: 0
-    path: Assets/MazeRoom.unity
+    path: Assets/Part1Nav.unity

@@ -25,16 +25,24 @@ public class Director : MonoBehaviour {
 	}
 
 	void Update() {
-		// click without pressing ctrl to select target location
-		if (Input.GetMouseButtonDown(0) && !(Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl))) {
+		// click to select target location
+		if (Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit)) {
-				target = hit.point;
-				hasTarget = true;
-				foreach (NavMeshAgent a in selected) {
-					a.SetDestination(target);
+				Collider collider = hit.collider;
+				//check if hit is a player or not with tag
+				if (collider.CompareTag("Movable")) {
+					return;
 				}
+				else {
+					target = hit.point;
+					hasTarget = true;
+					foreach (NavMeshAgent a in selected) {
+						a.SetDestination(target);
+					}
+				}
+
 			}
 		}
 		// if (hasTarget) {
