@@ -57,13 +57,19 @@ public class AnimAgentControl : MonoBehaviour {
 			animator.SetFloat("Speed", forwardSpeed);
 			animator.SetFloat("Direction", angle);
 			animator.SetFloat("AngularSpeed", angularSpeed);
-			print(angle+" "+angularSpeed);
 		}
 
 		AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
 		if (state.IsName("Base.IdlePivot") || state.IsName("Base.PlantNTurnLeft") || state.IsName("Base.PlantNTurnRight")) {
 			smoothAngle = 0;
 			angularSpeed = 0;
+		}
+
+		if (agent.isOnOffMeshLink) {
+			animator.SetBool("Jump", true);
+		}
+		else {
+			animator.SetBool("Jump", false);
 		}
 
 		agent.nextPosition =  transform.position + 0.6f*(agent.nextPosition - transform.position); // originally 0.9
